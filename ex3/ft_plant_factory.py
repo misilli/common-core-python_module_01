@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 
+
 class Plant:
-	def __init__(self, name: str, height: int, day: int) -> None:
-		self.name = name
-		self.height = round(height, 2) 
-		self.day = day
-	def grow(self):
-		self.height = round(self.height + 0.8, 2)
-	def age(self):
-		self.day += 1
-	def show(self):
-		print(f"{self.name}: {self.height:.1f}cm, {self.day} days old")
+    def __init__(self, name: str, height: int, day: int) -> None:
+        self.name = name
+        self.height = round(height, 2)
+        self.day = day
+
+    def grow(self):
+        self.height = round(self.height + 0.8, 2)
+
+    def age(self):
+        self.day += 1
+
+    def show(self):
+        print(f"{self.name}: {self.height:.1f}cm, {self.day} days old")
+
 
 def ft_plant_factory() -> None:
     print("=== Plant Factory Output ===")
@@ -29,7 +34,7 @@ def ft_plant_factory() -> None:
     fern = Plant("Fern", 15, 120)
     print("created:", end=" ")
     fern.show()
-   
+
 
 if __name__ == "__main__":
-	ft_plant_factory()
+    ft_plant_factory()

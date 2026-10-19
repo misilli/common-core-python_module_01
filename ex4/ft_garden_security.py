@@ -3,44 +3,44 @@
 
 class Plant:
     def __init__(self, name: str, height: int, day: int) -> None:
-        self.name = name
+        self._name = name
         self.set_height(height)
         self.set_age(day)
 
     def grow(self):
-        self.set_height(self.height + 0.8)
+        self.set_height(self.get_height() + 0.8)
 
     def age(self):
-        self.set_age(self.day + 1)
+        self.set_age(self.get_age() + 1)
 
     def get_height(self):
-        return self.height
+        return self._height
 
     def get_age(self):
-        return self.day
+        return self._day
 
     def set_height(self, height: float) -> None:
         if height < 0:
-            print(f"{self.name}: Error, height can't be negative")
+            print(f"{self._name}: Error, height can't be negative")
             print("Height update rejected")
-        else:
-            self.height = round(height, 2)
+            return
+        self._height = round(height, 2)
 
     def set_age(self, day: int) -> None:
         if day < 0:
-            print(f"{self.name}: Error, age can't be negative")
+            print(f"{self._name}: Error, age can't be negative")
             print("Age update rejected")
         else:
-            self.day = day
+            self._day = day
 
     def show(self):
-        print(f"{self.name}: {self.height:.1f}cm, {self.day} days old")
+        print(f"{self._name}: {self.get_height():.1f}cm, {self.get_age()} days old")
 
 
 def ft_garden_security() -> None:
     print("=== Garden Security System ===")
     rose = Plant("Rose", 15.0, 10)
-    print("Plant created: " , end="")
+    print("Plant created: ", end="")
     rose.show()
     print()
 
@@ -53,6 +53,7 @@ def ft_garden_security() -> None:
     print()
     print("Current state: ", end="")
     rose.show()
+
 
 if __name__ == "__main__":
     ft_garden_security()
