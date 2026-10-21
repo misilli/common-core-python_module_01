@@ -36,6 +36,10 @@ class Plant:
     @staticmethod
     def is_older_than_year(age: int) -> bool:
         return age > 365
+    
+    @classmethod
+    def create_anonymous(cls) -> "Plant":
+        return cls("Unknown plant", 0.0, 0)
 
     def show(self) -> None:
         print(f"{self._name}: {self._height}cm, {self._day} days old")
