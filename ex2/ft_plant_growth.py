@@ -7,13 +7,13 @@ class Plant:
         self.height = height
         self.day = day
 
-    def grow(self):
+    def grow(self) -> None:
         self.height = round(self.height + 0.8, 2)
 
-    def age(self):
+    def age(self) -> None:
         self.day += 1
 
-    def show(self):
+    def show(self) -> None:
         print(f"{self.name}: {self.height}cm, {self.day} days old")
 
 

@@ -9,16 +9,16 @@ class Plant:
         self.set_height(height)
         self.set_age(day)
 
-    def grow(self):
+    def grow(self) -> None:
         self.set_height(self.get_height() + 0.8)
 
-    def age(self):
+    def age(self) -> None:
         self.set_age(self.get_age() + 1)
 
-    def get_height(self):
+    def get_height(self) -> float:
         return self._height
 
-    def get_age(self):
+    def get_age(self) -> int:
         return self._day
 
     def set_height(self, height: float) -> None:
@@ -35,7 +35,7 @@ class Plant:
         else:
             self._day = day
 
-    def show(self):
+    def show(self) -> None:
         print(
             f"{self._name}: {self.get_height():.1f}cm, "
             f"{self.get_age()} days old"
