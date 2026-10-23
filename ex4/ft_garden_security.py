@@ -47,15 +47,12 @@ def ft_garden_security() -> None:
     rose = Plant("Rose", 15.0, 10)
     print("Plant created: ", end="")
     rose.show()
-    print()
-
     rose.set_height(25.0)
     rose.set_age(30)
-    print(f"Height updated: {rose.get_height()}cm")
-    print(f"Age updated: {rose.get_age()} days\n")
+    print(f"Height updated: {rose.get_height():g}cm")
+    print(f"Age updated: {rose.get_age()} days")
     rose.set_height(-67.0)
     rose.set_age(-67)
-    print()
     print("Current state: ", end="")
     rose.show()
 

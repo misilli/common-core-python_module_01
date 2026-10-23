@@ -13,11 +13,11 @@ class Plant:
 
 def ft_garden_data() -> None:
     print("=== Garden Plant Registry ===")
-    rose = Plant("rose", 25, 30)
+    rose = Plant("Rose", 25, 30)
     rose.show()
-    sunflower = Plant("sunflower", 80, 45)
+    sunflower = Plant("Sunflower", 80, 45)
     sunflower.show()
-    cactus = Plant("cactus", 15, 120)
+    cactus = Plant("Cactus", 15, 120)
     cactus.show()
 
 

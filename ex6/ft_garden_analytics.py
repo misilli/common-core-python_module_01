@@ -174,7 +174,6 @@ def ft_garden_analytics() -> None:
     print("=== Check year-old")
     print(f"Is 30 days more than a year? -> {Plant.is_older_than_year(30)}")
     print(f"Is 400 days more than a year? -> {Plant.is_older_than_year(400)}")
-    print()
 
     print("=== Flower")
     rose = Flower("Rose", 15.0, 10, "red")
@@ -185,7 +184,6 @@ def ft_garden_analytics() -> None:
     rose.bloom()
     rose.show()
     display_stats(rose)
-    print()
 
     print("=== Tree")
     oak = Tree("Oak", 200.0, 365, 5.0)
@@ -194,7 +192,6 @@ def ft_garden_analytics() -> None:
     print("[asking the oak to produce shade]")
     oak.produce_shade()
     display_stats(oak)
-    print()
 
     print("=== Seed")
     sunflower = Seed("Sunflower", 80.0, 45, "yellow")
@@ -205,7 +202,6 @@ def ft_garden_analytics() -> None:
     sunflower.bloom()
     sunflower.show()
     display_stats(sunflower)
-    print()
 
     print("=== Anonymous")
     anonymous = Plant.create_anonymous()
