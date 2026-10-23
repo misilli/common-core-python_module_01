@@ -2,8 +2,10 @@
 
 
 class Plant:
-    def __init__(self, name: str, height: int, day: int) -> None:
+    def __init__(self, name: str, height: float, day: int) -> None:
         self._name = name
+        self._height = 0.0
+        self._day = 0
         self.set_height(height)
         self.set_age(day)
 
@@ -34,7 +36,10 @@ class Plant:
             self._day = day
 
     def show(self):
-        print(f"{self._name}: {self.get_height():.1f}cm, {self.get_age()} days old")
+        print(
+            f"{self._name}: {self.get_height():.1f}cm, "
+            f"{self.get_age()} days old"
+        )
 
 
 def ft_garden_security() -> None:

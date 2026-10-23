@@ -4,6 +4,8 @@
 class Plant:
     def __init__(self, name: str, height: float, day: int) -> None:
         self._name = name
+        self._height = 0.0
+        self._day = 0
         self.set_height(height)
         self.set_age(day)
 
