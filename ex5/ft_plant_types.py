@@ -36,7 +36,10 @@ class Plant:
             self._day = day
 
     def show(self) -> None:
-        print(f"{self._name}: {self._height}cm, {self._day} days old")
+        print(
+            f"{self._name}: {self.get_height():.1f}cm, "
+            f"{self._day} days old"
+        )
 
 
 class Flower(Plant):
@@ -61,15 +64,15 @@ class Tree(Plant):
     def __init__(self, name: str, height: float,
                  day: int, trunk_diameter: float) -> None:
         super().__init__(name, height, day)
-        self.trunk_dia = trunk_diameter
+        self.trunk_diameter = trunk_diameter
 
     def show(self) -> None:
         super().show()
-        print(f"Trunk diameter: {self.trunk_dia}cm")
+        print(f"Trunk diameter: {self.trunk_diameter}cm")
 
     def produce_shade(self) -> None:
         print(f"Tree {self._name} now produces a shade of", end=" ")
-        print(f"{self.get_height()}cm long and {self.trunk_dia}cm wide.")
+        print(f"{self.get_height()}cm long and {self.trunk_diameter}cm wide.")
 
 
 class Vegetable(Plant):

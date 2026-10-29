@@ -73,7 +73,10 @@ class Plant:
 
     def show(self) -> None:
         self._stats.show()
-        print(f"{self._name}: {self._height}cm, {self._day} days old")
+        print(
+            f"{self._name}: {self.get_height():.1f}cm, "
+            f"{self._day} days old"
+        )
 
 
 class Flower(Plant):
