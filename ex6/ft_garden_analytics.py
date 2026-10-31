@@ -2,7 +2,7 @@
 
 
 class Plant:
-    class _Stats:
+    class Stats:
         def __init__(self) -> None:
             self._grow = 0
             self._age = 0
@@ -27,14 +27,14 @@ class Plant:
         self._day: int = 0
         self.set_height(height)
         self.set_age(day)
-        self._stats: Plant._Stats = Plant._Stats()
+        self.stats: Plant.Stats = Plant.Stats()
 
     def grow(self, rate: float) -> None:
-        self._stats.grow()
+        self.stats.grow()
         self.set_height(self.get_height() + rate)
 
     def age(self, days: int = 1) -> None:
-        self._stats.age()
+        self.stats.age()
         self.set_age(self.get_age() + days)
 
     def get_height(self) -> float:
@@ -46,8 +46,8 @@ class Plant:
     def get_name(self) -> str:
         return self._name
 
-    def get_stats(self) -> "Plant._Stats":
-        return self._stats
+    def get_stats(self) -> "Plant.Stats":
+        return self.stats
 
     def set_height(self, height: float) -> None:
         if height < 0:
@@ -72,7 +72,7 @@ class Plant:
         return cls("Unknown plant", 0.0, 0)
 
     def show(self) -> None:
-        self._stats.show()
+        self.stats.show()
         print(
             f"{self._name}: {self.get_height():.1f}cm, "
             f"{self._day} days old"
@@ -98,7 +98,7 @@ class Flower(Plant):
 
 
 class Tree(Plant):
-    class _TreeStats(Plant._Stats):
+    class _TreeStats(Plant.Stats):
         def __init__(self) -> None:
             super().__init__()
             self._shade = 0
