@@ -87,11 +87,11 @@ class Flower(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f"Color: {self.color}")
+        print(f" Color: {self.color}")
         if self._bloomed:
-            print(f"{self._name} is blooming beautifully!")
+            print(f" {self._name} is blooming beautifully!")
         else:
-            print(f"{self._name} has not bloomed yet")
+            print(f" {self._name} has not bloomed yet")
 
     def bloom(self) -> None:
         self._bloomed = True
@@ -108,7 +108,7 @@ class Tree(Plant):
 
         def display(self) -> None:
             super().display()
-            print(f"{self._shade} shade")
+            print(f" {self._shade} shade")
 
     def __init__(
         self, name: str, height: float, day: int, trunk_diameter: float
@@ -119,7 +119,7 @@ class Tree(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f"Trunk diameter: {self.trunk_diameter}cm")
+        print(f" Trunk diameter: {self.trunk_diameter}cm")
 
     def produce_shade(self) -> None:
         self._stats.shade()
@@ -163,7 +163,7 @@ class Seed(Flower):
 
     def show(self) -> None:
         super().show()
-        print(f"Seeds: {self._seeds}")
+        print(f" Seeds: {self._seeds}")
 
 
 def display_stats(plant: Plant) -> None:
@@ -176,7 +176,7 @@ def ft_garden_analytics() -> None:
     print("=== Check year-old")
     print(f"Is 30 days more than a year? -> {Plant.is_older_than_year(30)}")
     print(f"Is 400 days more than a year? -> {Plant.is_older_than_year(400)}")
-
+    print()
     print("=== Flower")
     rose = Flower("Rose", 15.0, 10, "red")
     rose.show()
@@ -186,7 +186,7 @@ def ft_garden_analytics() -> None:
     rose.bloom()
     rose.show()
     display_stats(rose)
-
+    print()
     print("=== Tree")
     oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
@@ -194,7 +194,7 @@ def ft_garden_analytics() -> None:
     print("[asking the oak to produce shade]")
     oak.produce_shade()
     display_stats(oak)
-
+    print()
     print("=== Seed")
     sunflower = Seed("Sunflower", 80.0, 45, "yellow")
     sunflower.show()
@@ -204,7 +204,7 @@ def ft_garden_analytics() -> None:
     sunflower.bloom()
     sunflower.show()
     display_stats(sunflower)
-
+    print()
     print("=== Anonymous")
     anonymous = Plant.create_anonymous()
     anonymous.show()

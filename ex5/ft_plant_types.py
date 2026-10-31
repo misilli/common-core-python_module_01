@@ -50,11 +50,11 @@ class Flower(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f"Color: {self.color}")
+        print(f" Color: {self.color}")
         if self._bloomed:
-            print(f"{self._name} is blooming beautifully!")
+            print(f" {self._name} is blooming beautifully!")
         else:
-            print(f"{self._name} has not bloomed yet")
+            print(f" {self._name} has not bloomed yet")
 
     def bloom(self) -> None:
         self._bloomed = True
@@ -68,7 +68,7 @@ class Tree(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f"Trunk diameter: {self.trunk_diameter}cm")
+        print(f" Trunk diameter: {self.trunk_diameter}cm")
 
     def produce_shade(self) -> None:
         print(f"Tree {self._name} now produces a shade of", end=" ")
@@ -92,8 +92,8 @@ class Vegetable(Plant):
 
     def show(self) -> None:
         super().show()
-        print(f"Harvest season: {self.harvest_season}")
-        print(f"Nutritional value: {self.nutritional_value:g}")
+        print(f" Harvest season: {self.harvest_season}")
+        print(f" Nutritional value: {self.nutritional_value:g}")
 
 
 def ft_plant_types() -> None:
@@ -104,11 +104,13 @@ def ft_plant_types() -> None:
     print("[asking the rose to bloom]")
     rose.bloom()
     rose.show()
+    print()
     print("=== Tree")
     oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     print("[asking the oak to produce shade]")
     oak.produce_shade()
+    print()
     print("=== Vegetable")
     tomato = Vegetable("Tomato", 5.0, 10, "April")
     tomato.show()
