@@ -114,8 +114,7 @@ class Tree(Plant):
         self, name: str, height: float, day: int, trunk_diameter: float
     ) -> None:
         super().__init__(name, height, day)
-        self._tree_stats: Tree._TreeStats = Tree._TreeStats()
-        self._stats = self._tree_stats
+        self._stats: Tree._TreeStats = Tree._TreeStats()
         self.trunk_diameter = trunk_diameter
 
     def show(self) -> None:
@@ -123,7 +122,7 @@ class Tree(Plant):
         print(f"Trunk diameter: {self.trunk_diameter}cm")
 
     def produce_shade(self) -> None:
-        self._tree_stats.shade()
+        self._stats.shade()
         print(f"Tree {self._name} now produces a shade of", end=" ")
         print(
             f"{self.get_height()}cm long and "
