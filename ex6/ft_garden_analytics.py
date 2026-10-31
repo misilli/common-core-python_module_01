@@ -27,7 +27,7 @@ class Plant:
         self._day: int = 0
         self.set_height(height)
         self.set_age(day)
-        self._stats: Plant.Stats = Plant.Stats()
+        self._stats = Plant.Stats()
 
     def grow(self, rate: float) -> None:
         self._stats.grow()
